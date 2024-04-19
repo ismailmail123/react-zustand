@@ -56,7 +56,7 @@ const ProductList = () => {
             <button onClick={() => deleteProduct(product.id)}>Delete</button>
           <button onClick={() => handleUpdateClick(product)}>Update</button>
           {selectedProduct && selectedProduct.id === product.id && (
-            <EditProductForm product={product} />
+            <EditProductForm product={selectedProduct} />
           )}
           </div>
         ))}

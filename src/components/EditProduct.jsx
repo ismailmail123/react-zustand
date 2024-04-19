@@ -1,18 +1,15 @@
-// ProductForm.js
+// UpdateProductForm.js
 import React, { useState } from 'react';
 import useProductStore from '../store/useProductStore';
 
-const ProductForm = () => {
-  const addProduct = useProductStore((state) => state.addProduct);
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
+const UpdateProductForm = ({ product }) => {
+  const updateProduct = useProductStore((state) => state.updateProduct);
+  const [name, setName] = useState(product.name);
+  const [price, setPrice] = useState(product.price);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !price) return;
-    addProduct({ id: Date.now(), name, price: parseFloat(price) });
-    setName('');
-    setPrice('');
+    updateProduct({ ...product, name, price: parseFloat(price) });
   };
 
   return (
@@ -29,9 +26,9 @@ const ProductForm = () => {
         onChange={(e) => setPrice(e.target.value)}
         placeholder="Price"
       />
-      <button type="submit">Add Product</button>
+      <button type="submit">Update Product</button>
     </form>
   );
 };
 
-export default ProductForm;
+export default UpdateProductForm;
