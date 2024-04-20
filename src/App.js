@@ -7,6 +7,7 @@ import Shop from './pages/Shop';
 import Cart from './pages/Cart';
 import HomeCart from './pages/HomeCart';
 import OrderValue from './pages/OrderValue';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
     {
       path: "/order",
       element: <OrderValue />,
+    },
+    {
+      path: "/navbar",
+      element: <Navbar/>,
     },
   ]);
 

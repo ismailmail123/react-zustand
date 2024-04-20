@@ -2,6 +2,7 @@ import CartItemCard from "../components/CartItemCard";
 import OrderValue from "../components/OrderValue";
 import { Link } from "react-router-dom";
 import useCartStore from "../store/useCartStore";
+import Navbar from "../components/Navbar";
 
 const Cart = () => {
   const { cartItems } = useCartStore();
@@ -21,7 +22,10 @@ const Cart = () => {
   }
 
   return (
+    <>
+    <Navbar />
     <div className=" flex  flex-col-reverse md:flex-row  gap-10 items-center md:items-start md:select-none md:justify-between">
+      
       <div className="flex flex-wrap flex-col md:flex-row mb-10  gap-10 ">
         {cartItems?.map((item) => (
           <CartItemCard product={item} />
@@ -32,6 +36,8 @@ const Cart = () => {
         <OrderValue />
       </div>
     </div>
+    </>
+    
   );
 };
 
