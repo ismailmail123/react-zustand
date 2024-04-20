@@ -1,5 +1,5 @@
 // store.js
-import create from 'zustand';
+import create from "zustand";
 
 const useProductStore = create((set) => ({
   products: [],
@@ -7,9 +7,7 @@ const useProductStore = create((set) => ({
   addProduct: (product) =>
     set((state) => ({ products: [...state.products, product] })),
   deleteProduct: (id) =>
-    set((state) => ({
-      products: state.products.filter((product) => product.id !== id),
-    })),
+    set((state) => ({products: state.products.filter((product) => product.id !== id)})),
   updateProduct: (updatedProduct) =>
     set((state) => ({
       products: state.products.map((product) =>

@@ -5,11 +5,14 @@ import ProductList from '../components/ProductList';
 
 const Home = () => {
   return (
-    <div>
-      <h1>CRUD Product App with Zustand</h1>
+    <div className='home-container'>
+      <div className='home-wrapper'>
+      <h1 className='text-center'>CRUD Product App with Zustand</h1>
       <AddProductForm />
       <ProductList />
     </div>
+    </div>
+    
   );
 };
 

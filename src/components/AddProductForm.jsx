@@ -16,13 +16,16 @@ const AddProductForm = () => {
   };
 
   return (
+    <div className='add-form'>
     <form onSubmit={handleSubmit}>
+      <label>Product Name</label>
       <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Product Name"
       />
+      <label>Price</label>
       <input
         type="number"
         value={price}
@@ -31,6 +34,7 @@ const AddProductForm = () => {
       />
       <button type="submit">Add Product</button>
     </form>
+    </div>
   );
 };
 
